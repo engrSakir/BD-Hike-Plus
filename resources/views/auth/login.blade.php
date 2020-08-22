@@ -8,7 +8,7 @@
     <meta name="author" content="Themesbox">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Theta - Login</title>
+    <title>BD Hike Plus - Login</title>
     <!-- Fevicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
     <!-- Start CSS -->
@@ -82,7 +82,7 @@
                 })
             </script>
             @php
-                session()->flash('message', null);
+                 session()->flash('message', null);
                  session()->flash('type', null);
             @endphp
         @endif

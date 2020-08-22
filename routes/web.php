@@ -26,6 +26,7 @@ Route::post('invoice/store','AjaxController@storeInvoice');
 
 //Admin Routes
 Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix'=>'', 'middleware'=>'admin'], function (){
+    Route::get('dashboard','DashboardController@index');
     Route::resource('permission', 'PermissionController');
     Route::resource('product', 'ProductController');
     Route::resource('sale', 'SaleController');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use App\Invoice;
 use App\Item;
+use App\Sale;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -83,12 +84,19 @@ class AjaxController extends Controller
             }
 
             //Add Sale each or item
+            $sale = new Sale();
+            $sale->invoice_id = $invoice->id;
+            $sale->item_id = $item->id;
+            $sale->quantity = $qty;
+            $sale->price = $price;
+            $sale->save();
+            /*
             DB::table('sales')->insert([
                 'invoice_id'   => $invoice->id,
                 'item_id'      => $item->id,
                 'quantity'     => $qty,
                 'price'         => $price,
-            ]);
+            ]);*/
             $index_name++;
         }
 
